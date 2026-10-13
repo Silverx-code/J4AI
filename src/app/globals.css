@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-surface font-body-md text-body-md text-on-surface antialiased; }
+  ::selection { background: #ffd9df; }
+}
+
+@layer utilities {
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+  .scrollbar-none { scrollbar-width: none; }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .shadow-warm { box-shadow: 0 4px 20px -2px rgba(255, 42, 122, 0.08); }
+  .shadow-glow { box-shadow: 0 12px 32px -4px rgba(255, 87, 34, 0.16); }
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal; font-style: normal; font-size: 24px; line-height: 1;
+  letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap;
+  word-wrap: normal; direction: ltr; -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+.icon-fill { font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
+
+/* form controls (design: 12px radius, warm border, magenta focus ring) */
+.field {
+  @apply w-full rounded-xl bg-surface-container-low border border-[#E5C5D3] px-4 py-3 text-body-md text-on-surface
+         placeholder:text-outline/60 outline-none transition;
+}
+.field:focus { border-color: #ff2a7a; box-shadow: 0 0 0 2px #ff2a7a; }
+.label { @apply font-label-md text-label-md text-on-surface mb-1.5 block; }
+.btn { @apply inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-full px-5 py-2.5 font-label-md text-label-md transition active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed; }
+.btn-primary { @apply btn bg-primary text-on-primary shadow-glow hover:bg-on-primary-fixed-variant; }
+.btn-secondary { @apply btn bg-secondary-container text-on-primary shadow-[0_4px_12px_rgba(255,87,34,0.25)] hover:brightness-95; }
+.btn-outline { @apply btn border-[1.5px] border-primary text-primary bg-transparent hover:bg-primary-fixed/40; }
+.btn-white { @apply btn bg-surface-container-lowest text-primary shadow-md; }
+.btn-glass { @apply btn bg-white/20 text-on-primary backdrop-blur-md hover:bg-white/30; }
+.card { @apply rounded-3xl bg-surface-container-lowest border border-[#F3D9E2] shadow-warm; }
+.chip { @apply inline-flex items-center gap-1 rounded-full bg-[#FFF0F5] px-3 py-1 font-label-sm text-label-sm uppercase text-primary; }
