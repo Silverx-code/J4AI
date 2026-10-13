@@ -27,6 +27,14 @@
 .icon-fill { font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
 .font-display-serif { font-family: "Instrument Serif", serif; font-weight: 400; }
 
+/* Keep the homepage type system consistent throughout public and admin pages. */
+h1, h2, h3, h4, h5, h6,
+.font-headline-sm, .font-headline-md, .font-headline-lg, .font-headline-lg-mobile,
+.font-display-hero, .font-display-hero-mobile, .font-display-serif {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html.motion-enabled .scroll-motion-item {
     transition: opacity 620ms ease, transform 620ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 260ms ease, border-color 260ms ease;
