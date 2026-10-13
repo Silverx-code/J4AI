@@ -62,7 +62,7 @@ async function main() {
     },
     {
       programId: program.id, label: "4.0", slug: "4-0", title: "Pad A Girl 4.0", status: "UPCOMING",
-      tagline: "Breaking Period Stigma & Promoting Dignity", startDate: "2026-10-15", endDate: "2026-10-16",
+      tagline: "Breaking Period Stigma & Promoting Dignity", startDate: "2026-10-23", endDate: "2026-10-24",
       targetReach: 1200, locations: [], pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops"],
       summary: "The next Pad A Girl outreach. Volunteers and sponsors are being mobilised now.",
     },
@@ -79,9 +79,9 @@ async function main() {
   }
 
   const posts: (typeof s.posts.$inferInsert)[] = [
-    { title: "Pad A Girl 4.0 is coming: 15–16 October 2026", slug: "pad-a-girl-4-0-announced", category: "Announcement", featured: true, status: "PUBLISHED",
-      excerpt: "Our next outreach is set for 15–16 October 2026. Volunteers and sponsors are invited to join.",
-      body: "Pad A Girl 4.0 takes place on 15–16 October 2026.\n\nEvery girl deserves dignity, education and comfort. You can help by volunteering on one of our field units or by sponsoring dignity kits.\n\nVisit the Get Involved page to apply, or the Donate page to sponsor a girl.",
+    { title: "Pad A Girl 4.0 is coming: 23–24 October 2026", slug: "pad-a-girl-4-0-announced", category: "Announcement", featured: true, status: "PUBLISHED",
+      excerpt: "Our next outreach is set for 23–24 October 2026. Volunteers and sponsors are invited to join.",
+      body: "Pad A Girl 4.0 takes place on 23–24 October 2026.\n\nEvery girl deserves dignity, education and comfort. You can help by volunteering on one of our field units or by sponsoring dignity kits.\n\nVisit the Get Involved page to apply, or the Donate page to sponsor a girl.",
       ctaLabel: "Get involved", ctaUrl: "/get-involved", publishedAt: new Date("2026-10-01T09:00:00Z") },
     { title: "Pad A Girl 3.0: Children's Day Dignity Drive", slug: "pad-a-girl-3-0-childrens-day", category: "Impact Report", status: "PUBLISHED",
       excerpt: "The 3.0 drive ran 25–31 May 2026 in Maiduguri. The full verified report is being finalised.",
