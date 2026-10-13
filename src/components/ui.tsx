@@ -33,9 +33,7 @@ export function SectionHeading({ icon, title, aside, href }: { icon?: string; ti
 
 export function HeroGradient({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <section className={cn("relative w-full overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary-container to-secondary-container p-5 text-on-primary shadow-xl md:p-10", className)}>
-      <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
-      <div className="pointer-events-none absolute -bottom-10 -left-10 h-44 w-44 rounded-full bg-secondary-fixed/20 blur-xl" />
+    <section className={cn("relative w-full overflow-hidden rounded-3xl bg-primary p-5 text-on-primary shadow-xl md:p-10", className)}>
       <div className="relative z-10">{children}</div>
     </section>
   );

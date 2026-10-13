@@ -32,6 +32,34 @@ export default async function NewsPage() {
         ))}
       </section>
 
+      <section aria-labelledby="pag-3-feature" className="grid overflow-hidden rounded-3xl border border-[#F3D9E2] bg-surface-container-lowest shadow-warm md:grid-cols-[0.9fr_1.1fr]">
+        <div className="relative min-h-[24rem] bg-surface-container sm:min-h-[30rem]">
+          <Image
+            src="/images/pad-a-girl-banner.jpg"
+            alt="Pad A Girl 3.0 Children's Day Dignity Drive campaign flyer"
+            fill
+            sizes="(max-width: 768px) 100vw, 42vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="flex flex-col items-start justify-center p-6 sm:p-9 lg:p-12">
+          <span className="chip">Featured campaign · Pad A Girl 3.0</span>
+          <h2 id="pag-3-feature" className="mt-4 font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">
+            Dignity, health, and learning for every girl
+          </h2>
+          <p className="mt-4 font-body-md text-body-md text-on-surface-variant">
+            The Children’s Day Dignity Drive set out to support 1,000 girls in Borno State with menstrual health education, pads, and hygiene kits. By bringing practical care and trusted information to schools and IDP camps, the campaign aimed to help girls stay healthy, confident, and in class throughout the month.
+          </p>
+          <p className="mt-3 font-label-sm text-label-sm text-on-surface-variant">
+            Maiduguri · 25–31 May 2026 · Verified reach is pending
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/editions/3-0" className="btn-primary">Explore the campaign</Link>
+            <Link href="/get-involved" className="btn-outline">Get involved</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="flex flex-col gap-3">
         <h2 className="font-headline-sm text-headline-sm">Recent notices &amp; bulletins</h2>
         {featured && <PostCard p={featured} big />}
