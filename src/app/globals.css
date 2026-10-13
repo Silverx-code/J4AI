@@ -25,8 +25,7 @@
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 .icon-fill { font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
-
-.hero-background-video { opacity: 1; }
+.font-display-serif { font-family: "Instrument Serif", serif; font-weight: 400; }
 
 @media (prefers-reduced-motion: no-preference) {
   html.motion-enabled .scroll-motion-item {
@@ -57,7 +56,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-background-video { display: none; }
   html { scroll-behavior: auto; }
 }
 

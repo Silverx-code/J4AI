@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { cn, STATUS_LABEL } from "@/lib/utils";
 
 export function Icon({ name, fill, className }: { name: string; fill?: boolean; className?: string }) {
@@ -32,18 +31,9 @@ export function SectionHeading({ icon, title, aside, href }: { icon?: string; ti
   );
 }
 
-export function HeroGradient({ children, className, videoSrc }: { children: React.ReactNode; className?: string; videoSrc?: string }) {
+export function HeroGradient({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
     <section className={cn("relative w-full overflow-hidden rounded-3xl bg-primary p-5 text-on-primary shadow-xl md:p-10", className)}>
-      {videoSrc && (
-        <div className="absolute inset-0">
-          <Image src="/images/pad-a-girl-banner.jpg" alt="" fill sizes="100vw" className="object-cover" priority />
-          <video className="hero-background-video absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-      )}
       <div className="relative z-10">{children}</div>
     </section>
   );
