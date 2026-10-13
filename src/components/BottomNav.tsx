@@ -16,9 +16,9 @@ export default function BottomNav() {
           return (
             <li key={n.href} className="flex-1">
               <Link href={n.href} aria-current={active ? "page" : undefined}
-                className={cn("flex h-full flex-col items-center justify-center gap-0.5 font-label-sm text-[10px] uppercase transition",
-                  active ? "text-white" : "text-white/75")}>
-                <span className={cn("flex h-7 w-12 items-center justify-center rounded-full transition", active && "bg-white/20")}>
+                className={cn("flex h-full flex-col items-center justify-center gap-0.5 font-label-sm text-[11px] font-extrabold uppercase tracking-wide transition",
+                  active ? "text-white" : "text-white/85")}>
+                <span className={cn("flex h-7 w-12 items-center justify-center rounded-full transition", active && "bg-white/25")}>
                   <Icon name={n.icon} fill={active} className="text-[22px]" />
                 </span>
                 {n.label}
