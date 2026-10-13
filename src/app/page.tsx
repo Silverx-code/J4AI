@@ -107,26 +107,33 @@ export default async function HomePage() {
           <p className="mt-3 font-body-md text-body-md text-on-surface-variant">From shared learning to practical care, our outreach is built around listening, trusted guidance, and showing up for girls.</p>
         </div>
         <div className="grid gap-4 md:grid-cols-12">
-          <figure className="card overflow-hidden md:col-span-7">
-            <div className="relative h-64 sm:h-80">
-              <Image src="/images/field-students.jpg" alt="Students participating in a Pad A Girl outreach session" fill sizes="(max-width: 768px) 100vw, 58vw" className="object-cover" />
+          <figure className="field-photo card group relative min-h-[24rem] overflow-hidden md:col-span-7 md:row-span-2 md:min-h-[34rem]">
+            <div className="field-photo-image absolute inset-0">
+              <Image src="/images/field-students.jpg" alt="Students participating in a Pad A Girl outreach session" fill sizes="(max-width: 768px) 100vw, 58vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
             </div>
-            <figcaption className="p-4 font-body-sm text-body-sm text-on-surface-variant">A welcoming space for girls to learn, ask questions, and take part.</figcaption>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#250817]/85 via-[#250817]/10 to-transparent" />
+            <figcaption className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-1 font-label-sm text-label-sm uppercase tracking-[0.12em] backdrop-blur-sm"><Icon name="groups" className="text-[16px]" />Field moments · 01</span>
+              <p className="mt-3 max-w-lg font-display-serif text-3xl leading-tight sm:text-4xl">A welcoming space to learn, ask questions, and take part.</p>
+            </figcaption>
           </figure>
-          <div className="grid gap-4 md:col-span-5">
-            <figure className="card overflow-hidden">
-              <div className="relative h-52">
-                <Image src="/images/field-speaker.jpg" alt="A facilitator leading a menstrual health discussion" fill sizes="(max-width: 768px) 100vw, 42vw" className="object-cover object-top" />
-              </div>
-              <figcaption className="p-4 font-body-sm text-body-sm text-on-surface-variant">Clear, supportive conversations help break period stigma.</figcaption>
-            </figure>
-            <figure className="card overflow-hidden">
-              <div className="relative h-52">
-                <Image src="/images/field-kit-handover.jpg" alt="A volunteer handing a dignity kit to a student" fill sizes="(max-width: 768px) 100vw, 42vw" className="object-cover object-center" />
-              </div>
-              <figcaption className="p-4 font-body-sm text-body-sm text-on-surface-variant">Practical hygiene support is shared with care and respect.</figcaption>
-            </figure>
-          </div>
+          <FieldPhoto
+            className="md:col-span-5"
+            src="/images/field-speaker.jpg"
+            alt="A facilitator leading a menstrual health discussion"
+            label="Listen & learn · 02"
+            icon="record_voice_over"
+            caption="Clear, supportive conversations help break period stigma."
+            imagePosition="object-top"
+          />
+          <FieldPhoto
+            className="md:col-span-5"
+            src="/images/field-kit-handover.jpg"
+            alt="A volunteer handing a dignity kit to a student"
+            label="Practical care · 03"
+            icon="volunteer_activism"
+            caption="Hygiene support shared with care, respect, and a smile."
+          />
         </div>
       </section>
 
@@ -226,6 +233,29 @@ function Pillar({ icon, title, tone, body }: { icon: string; title: string; tone
         <p className="mt-2 font-body-sm text-body-sm leading-relaxed text-on-surface-variant">{body}</p>
       </div>
     </article>
+  );
+}
+
+function FieldPhoto({ className, src, alt, label, icon, caption, imagePosition = "object-center" }: {
+  className: string;
+  src: string;
+  alt: string;
+  label: string;
+  icon: string;
+  caption: string;
+  imagePosition?: string;
+}) {
+  return (
+    <figure className={`field-photo card group relative min-h-[17rem] overflow-hidden ${className}`}>
+      <div className="field-photo-image absolute inset-0">
+        <Image src={src} alt={alt} fill sizes="(max-width: 768px) 100vw, 42vw" className={`object-cover transition-transform duration-700 group-hover:scale-[1.035] ${imagePosition}`} />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#250817]/85 via-[#250817]/15 to-transparent" />
+      <figcaption className="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/15 px-3 py-1 font-label-sm text-label-sm uppercase tracking-[0.1em] backdrop-blur-sm"><Icon name={icon} className="text-[15px]" />{label}</span>
+        <p className="mt-2 font-body-sm text-body-sm font-medium leading-relaxed">{caption}</p>
+      </figcaption>
+    </figure>
   );
 }
 
