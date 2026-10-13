@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getNextEdition } from "@/lib/queries";
 import { formatDateRange } from "@/lib/utils";
 import { getSettings } from "@/lib/settings";
@@ -36,6 +37,15 @@ export default async function GetInvolved({ searchParams }: { searchParams: { ta
               ))}
             </div>
           </div>
+          <figure className="card overflow-hidden">
+            <div className="relative h-56">
+              <Image src="/images/field-session.jpg" alt="Girls taking part in a Pad A Girl learning session" fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
+            </div>
+            <figcaption className="p-4">
+              <p className="font-display-serif text-2xl">Your time can make a difference.</p>
+              <p className="mt-1 font-body-sm text-body-sm text-on-surface-variant">Join a team supporting menstrual health education and practical care in the community.</p>
+            </figcaption>
+          </figure>
           <div className="card p-4 font-body-sm text-body-sm text-on-surface-variant">
             <p className="font-label-lg text-label-lg text-on-surface">Questions?</p>
             <p>{s.contact_email}</p><p>{s.contact_phone}</p><p>Instagram @{s.instagram_handle}</p>

@@ -42,8 +42,8 @@ export default async function HomePage() {
 
         <div className="relative min-h-[20rem] bg-primary-container md:min-h-full">
           <Image
-            src="/images/pag-3-0-shirt.jpg"
-            alt="Pad A Girl campaign shirt"
+            src="/images/field-session-wide.jpg"
+            alt="Girls gathered for a Pad A Girl menstrual health session"
             fill
             priority
             sizes="(max-width: 768px) 100vw, 48vw"
@@ -97,6 +97,36 @@ export default async function HomePage() {
           <Pillar icon="menu_book" title="Education" tone="bg-primary-fixed text-primary" body="Clear, age-appropriate menstrual health education that helps girls understand their bodies and make informed choices." />
           <Pillar icon="health_and_safety" title="Health" tone="bg-secondary-fixed text-secondary" body="Pads and hygiene kits, alongside practical guidance that supports health, comfort, and everyday wellbeing." />
           <Pillar icon="sentiment_satisfied" title="Dignity" tone="bg-[#E4F4F2] text-[#176B62]" body="Creating supportive spaces where periods do not stand between girls and school, confidence, or opportunity." />
+        </div>
+      </section>
+
+      <section aria-labelledby="field-stories-title">
+        <div className="mb-6 max-w-2xl">
+          <p className="font-label-sm text-label-sm uppercase tracking-[0.12em] text-primary">Together in the community</p>
+          <h2 id="field-stories-title" className="mt-1 font-display-serif text-4xl leading-tight sm:text-5xl">Support that meets girls where they are</h2>
+          <p className="mt-3 font-body-md text-body-md text-on-surface-variant">From shared learning to practical care, our outreach is built around listening, trusted guidance, and showing up for girls.</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-12">
+          <figure className="card overflow-hidden md:col-span-7">
+            <div className="relative h-64 sm:h-80">
+              <Image src="/images/field-students.jpg" alt="Students participating in a Pad A Girl outreach session" fill sizes="(max-width: 768px) 100vw, 58vw" className="object-cover" />
+            </div>
+            <figcaption className="p-4 font-body-sm text-body-sm text-on-surface-variant">A welcoming space for girls to learn, ask questions, and take part.</figcaption>
+          </figure>
+          <div className="grid gap-4 md:col-span-5">
+            <figure className="card overflow-hidden">
+              <div className="relative h-52">
+                <Image src="/images/field-speaker.jpg" alt="A facilitator leading a menstrual health discussion" fill sizes="(max-width: 768px) 100vw, 42vw" className="object-cover object-top" />
+              </div>
+              <figcaption className="p-4 font-body-sm text-body-sm text-on-surface-variant">Clear, supportive conversations help break period stigma.</figcaption>
+            </figure>
+            <figure className="card overflow-hidden">
+              <div className="relative h-52">
+                <Image src="/images/field-kit-handover.jpg" alt="A volunteer handing a dignity kit to a student" fill sizes="(max-width: 768px) 100vw, 42vw" className="object-cover object-center" />
+              </div>
+              <figcaption className="p-4 font-body-sm text-body-sm text-on-surface-variant">Practical hygiene support is shared with care and respect.</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
