@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import ScrollMotion from "@/components/ScrollMotion";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
@@ -26,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="flex min-h-screen flex-col">
         <Header />
-        <div className="flex-1 pt-16">{children}</div>
+        <div className="flex-1 pt-16"><ScrollMotion>{children}</ScrollMotion></div>
         <Footer />
         <BottomNav />
       </body>

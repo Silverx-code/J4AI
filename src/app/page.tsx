@@ -18,7 +18,7 @@ export default async function NewsPage() {
       <div><h1 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">News &amp; Press</h1><p className="font-body-md text-body-md text-on-surface-variant">Official updates and outreach notices from Jesus For All Initiative.</p></div>
 
       {next && (
-        <HeroGradient>
+        <HeroGradient videoSrc="/media/nta-coverage.mp4" className="flex min-h-[18rem] items-end md:min-h-[22rem]">
           <span className="inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1 font-label-sm text-label-sm uppercase">Special announcement · {next.title}</span>
           <h2 className="mt-3 font-headline-lg-mobile text-headline-lg-mobile uppercase md:font-headline-lg md:text-headline-lg">{next.tagline ?? s.tagline}</h2>
           <p className="mt-1 font-body-md text-body-md text-primary-fixed">Outreach date: <b>{formatDateRange(next.startDate, next.endDate, true)}</b></p>
@@ -77,7 +77,7 @@ export default async function NewsPage() {
 
 function PostCard({ p, big }: { p: { slug: string; title: string; category: string; excerpt: string | null; coverImage: string | null; publishedAt: Date | null; ctaLabel: string | null; ctaUrl: string | null }; big?: boolean }) {
   return (
-    <article className={`card flex overflow-hidden ${big ? "flex-col md:flex-row" : "flex-col"}`}>
+    <article className={`card flex h-full overflow-hidden ${big ? "flex-col md:flex-row" : "flex-col"}`}>
       {p.coverImage && <div className={`relative ${big ? "h-56 md:h-auto md:w-2/5" : "h-40"} bg-surface-container`}><Image src={p.coverImage} alt="" fill sizes="(max-width: 768px) 100vw, 480px" className="object-cover" /></div>}
       <div className="flex flex-1 flex-col gap-2 p-4">
         <div className="flex items-center justify-between"><span className="chip">{p.category}</span><span className="font-label-sm text-label-sm text-on-surface-variant">{formatDate(p.publishedAt)}</span></div>

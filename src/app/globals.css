@@ -26,6 +26,41 @@
 }
 .icon-fill { font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
 
+.hero-background-video { opacity: 1; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-enabled .scroll-motion-item {
+    transition: opacity 620ms ease, transform 620ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 260ms ease, border-color 260ms ease;
+    transition-delay: var(--scroll-delay, 0ms);
+  }
+  html.motion-enabled .scroll-motion-item:not([data-scroll-visible="true"]) {
+    opacity: 0;
+    transform: translateY(22px) scale(0.99);
+  }
+  html.motion-enabled .scroll-motion-item[data-scroll-visible="true"] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .motion-page-enter { animation: page-enter 520ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  @keyframes page-enter {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .card:is(a, article, figure):hover {
+    transform: translateY(-4px);
+    border-color: #e9abc0;
+    box-shadow: 0 14px 30px -12px rgba(183, 0, 81, 0.24);
+  }
+  .card img { transition: transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .card:is(a, article, figure):hover img { transform: scale(1.035); }
+  .btn:not(:disabled):hover { transform: translateY(-1px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-background-video { display: none; }
+  html { scroll-behavior: auto; }
+}
+
 /* form controls (design: 12px radius, warm border, magenta focus ring) */
 .field {
   @apply w-full rounded-xl bg-surface-container-low border border-[#E5C5D3] px-4 py-3 text-body-md text-on-surface
