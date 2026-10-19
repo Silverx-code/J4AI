@@ -15,6 +15,20 @@
       "when": 1791900000000,
       "tag": "0001_reschedule_pad_a_girl_4",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792454400000,
+      "tag": "0002_update_reach_and_payment_account",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792540800000,
+      "tag": "0003_add_published_field_report",
+      "breakpoints": true
     }
   ]
 }

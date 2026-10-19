@@ -17,6 +17,7 @@ export default async function Footer() {
         </div>
         <div className="font-body-sm text-body-sm text-on-surface-variant">
           <p>{s.contact_email}</p>
+          <p>{s.additional_contact_email}</p>
           <p>{s.contact_phone}</p>
           <p>@{s.instagram_handle}</p>
         </div>

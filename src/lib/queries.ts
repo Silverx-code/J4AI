@@ -39,14 +39,16 @@ export const getFinance = cache(async (editionId: string) => {
   return f ?? null;
 });
 
-/** Impact totals are computed ONLY from verified `reach` on completed editions (targets never count). */
+/** The cumulative organization reach is set in site settings; edition reach remains report-backed. */
 export const getStats = cache(async () => {
   const rows = await db.select().from(editions);
   const done = rows.filter((e) => isDone(e.status));
+  const settings = await getSettings();
   const [{ count }] = await db.select({ count: sql<number>`count(*)::int` }).from(editionMedia)
     .where(inArray(editionMedia.type, ["PRESS", "VIDEO"]));
   return {
-    reach: done.reduce((n, e) => n + (e.reach ?? 0), 0),
+    reach: Number(settings.girls_reached) || done.reduce((n, e) => n + (e.reach ?? 0), 0),
+    mothersReached: Number(settings.mothers_reached) || 0,
     editions: done.length,
     schools: done.reduce((n, e) => n + (e.schools ?? 0), 0),
     pressFeatures: count,

@@ -4,6 +4,7 @@ import { getNextEdition } from "@/lib/queries";
 import { formatDateRange } from "@/lib/utils";
 import { getSettings } from "@/lib/settings";
 import InvolvedForms from "@/components/InvolvedForms";
+import BankCard from "@/components/BankCard";
 import { HeroGradient, Icon } from "@/components/ui";
 
 export const dynamic = "force-dynamic";
@@ -39,16 +40,26 @@ export default async function GetInvolved({ searchParams }: { searchParams: { ta
           </div>
           <figure className="card overflow-hidden">
             <div className="relative h-56">
-              <Image src="/images/field-session.jpg" alt="Girls taking part in a Pad A Girl learning session" fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
+              <Image src="/images/field-kit-handover.jpg" alt="J4AI volunteer handing a Pad A Girl kit to a participant" fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
             </div>
             <figcaption className="p-4">
               <p className="font-display-serif text-2xl">Your time can make a difference.</p>
               <p className="mt-1 font-body-sm text-body-sm text-on-surface-variant">Join a team supporting menstrual health education and practical care in the community.</p>
             </figcaption>
           </figure>
+          <section className="card overflow-hidden p-4">
+            <h2 className="font-headline-sm text-headline-sm">Advocacy merch &amp; kits</h2>
+            <p className="mt-1 font-body-sm text-body-sm text-on-surface-variant">Pad A Girl campaign shirts for volunteers and supporters.</p>
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <figure><div className="relative aspect-[4/5] overflow-hidden rounded-xl"><Image src="/images/merch/pad-a-girl-3-0-shirt-brown.jpg" alt="Brown Pad A Girl 3.0 campaign shirt" fill sizes="(max-width: 768px) 50vw, 200px" className="object-cover" /></div><figcaption className="mt-1 font-label-sm text-label-sm">Brown</figcaption></figure>
+              <figure><div className="relative aspect-[4/5] overflow-hidden rounded-xl"><Image src="/images/merch/pad-a-girl-3-0-shirt-green.jpg" alt="Green Pad A Girl 3.0 campaign shirt" fill sizes="(max-width: 768px) 50vw, 200px" className="object-cover" /></div><figcaption className="mt-1 font-label-sm text-label-sm">Green</figcaption></figure>
+            </div>
+            <p className="mt-3 font-body-sm text-body-sm text-on-surface-variant">For shirt or kit payments, use the official account below. Please include “Merch” in your transfer note.</p>
+            <div className="mt-3"><BankCard /></div>
+          </section>
           <div className="card p-4 font-body-sm text-body-sm text-on-surface-variant">
             <p className="font-label-lg text-label-lg text-on-surface">Questions?</p>
-            <p>{s.contact_email}</p><p>{s.contact_phone}</p><p>Instagram @{s.instagram_handle}</p>
+            <p>{s.contact_email}</p><p>{s.additional_contact_email}</p><p>{s.contact_phone}</p><p>Instagram @{s.instagram_handle}</p>
           </div>
         </aside>
       </div>

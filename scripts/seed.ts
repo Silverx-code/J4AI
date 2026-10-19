@@ -36,20 +36,22 @@ async function main() {
     {
       programId: program.id, label: "1.0", slug: "1-0", title: "Pad A Girl 1.0", status: "COMPLETED",
       tagline: "Where it began", startDate: "2025-10-28", endDate: "2025-10-28", hostState: "Borno State",
-      locations: ["Government Technical Secondary School, Njimtilo"], schools: 1, attendance: 250,
-      summary: "The foundational outreach: menstrual hygiene education and sanitary pad distribution at Government Technical Secondary School, Njimtilo, attended by about 250 people including 200+ students and 30 mothers.",
+      locations: ["Government Technical Secondary School, Njimtilo"], schools: 1, attendance: 250, reach: 200,
+      summary: "The 28 October 2025 outreach at Government Technical Secondary School, Njimtilo recorded 250 attendees, including 200 students and 30 mothers. Ten volunteers supported pad distribution and menstrual hygiene education.",
+      reportUrl: "/brand/PAG%201.0%20AND%202.0%20REPORT.pdf", reportLabel: "PAG 1.0 & 2.0 official field report",
     },
     {
       programId: program.id, label: "2.0", slug: "2-0", title: "Pad A Girl 2.0", status: "COMPLETED",
       tagline: "Three schools, one mission", startDate: "2026-01-22", endDate: "2026-01-26", hostState: "Borno State",
-      locations: ["Maiduguri", "Monguno"], schools: 3, reach: 395,
-      summary: "A five-day outreach across three schools in Maiduguri and Monguno, supplying hygiene kits and menstrual health education to students and young mothers.",
+      locations: ["Government Girls Secondary School, Yerwa", "Continuing Education Institute / Agency for Mass Literacy", "Federal Government Girls College, Monguno"], schools: 3, attendance: 440, reach: 265, targetReach: 600,
+      summary: "Held January 22 to 26, 2026 across three institutions: Government Girls Secondary School, Yerwa; Continuing Education Institute / Agency for Mass Literacy; and Federal Government Girls College, Monguno. The report records 440 attendees, including 410 students and 14 volunteers; its objectives cite 265 female students and 130 young mothers.",
+      reportUrl: "/brand/PAG%201.0%20AND%202.0%20REPORT.pdf", reportLabel: "PAG 1.0 & 2.0 official field report",
     },
     {
       programId: program.id, label: "3.0", slug: "3-0", title: "Pad A Girl 3.0", status: "COMPLETED_REPORT_PENDING",
       tagline: "Children's Day Dignity Drive", startDate: "2026-05-25", endDate: "2026-05-31", hostState: "Borno State",
-      locations: ["Maiduguri"], targetReach: 1000,
-      targetDescription: "Planned reach: 1,000 girls through public secondary schools and IDP camps in Borno State.",
+      locations: ["Maiduguri"], targetReach: 395,
+      targetDescription: "Campaign goal: reach 395 girls through public secondary schools and IDP camps in Borno State.",
       partners: ["UNFPA"], partnerNote: "Organised by Jesus For All Initiative in collaboration with the United Nations Population Fund.",
       pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops"],
       summary: "A Children's Day dignity drive for girls in Borno State: pads and hygiene kits, menstrual health sensitisation, and support to keep girls in school every day of the month.",
@@ -63,7 +65,7 @@ async function main() {
     {
       programId: program.id, label: "4.0", slug: "4-0", title: "Pad A Girl 4.0", status: "UPCOMING",
       tagline: "Breaking Period Stigma & Promoting Dignity", startDate: "2026-10-23", endDate: "2026-10-24",
-      targetReach: 1200, locations: [], pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops"],
+      targetReach: 500, locations: [], pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops", "Boys' Education"],
       summary: "The next Pad A Girl outreach. Volunteers and sponsors are being mobilised now.",
     },
   ];

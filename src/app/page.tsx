@@ -67,9 +67,10 @@ export default async function HomePage() {
           </div>
           <Link href="/impact" className="inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:underline">See impact &amp; transparency <Icon name="arrow_forward" className="text-[17px]" /></Link>
         </div>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { value: stats.reach.toLocaleString(), label: "Girls reached", icon: "groups" },
+            { value: stats.mothersReached.toLocaleString(), label: "Mothers reached", icon: "family_restroom" },
             { value: stats.schools.toLocaleString(), label: "Schools visited", icon: "school" },
             { value: stats.editions.toLocaleString(), label: "Editions held", icon: "event_available" },
           ].map((item) => (
@@ -82,7 +83,7 @@ export default async function HomePage() {
             </div>
           ))}
         </div>
-        <p className="mt-3 font-body-sm text-body-sm text-on-surface-variant">Figures include verified results from completed campaigns only; planned targets are not counted.</p>
+        <p className="mt-3 font-body-sm text-body-sm text-on-surface-variant">Cumulative reach reported by J4AI across its programmes.</p>
       </section>
 
       {campaign && <CampaignFeature campaign={campaign} />}
@@ -97,6 +98,7 @@ export default async function HomePage() {
           <Pillar icon="menu_book" title="Education" tone="bg-primary-fixed text-primary" body="Clear, age-appropriate menstrual health education that helps girls understand their bodies and make informed choices." />
           <Pillar icon="health_and_safety" title="Health" tone="bg-secondary-fixed text-secondary" body="Pads and hygiene kits, alongside practical guidance that supports health, comfort, and everyday wellbeing." />
           <Pillar icon="sentiment_satisfied" title="Dignity" tone="bg-[#E4F4F2] text-[#176B62]" body="Creating supportive spaces where periods do not stand between girls and school, confidence, or opportunity." />
+          <Pillar icon="menu_book" title="Boys' education" tone="bg-secondary-fixed text-secondary" body="Helping boys understand menstrual health and support respectful, inclusive school communities." />
         </div>
       </section>
 

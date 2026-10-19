@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { AVAILABILITY, LOCATIONS, VOLUNTEER_UNITS } from "@/lib/constants";
+import { AFRICAN_COUNTRIES, AVAILABILITY, NIGERIAN_STATES, VOLUNTEER_UNITS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Icon } from "./ui";
 
@@ -9,6 +9,8 @@ type Tab = "volunteer" | "outreach";
 export default function InvolvedForms({ initialTab = "volunteer", eventLabel }: { initialTab?: Tab; eventLabel?: string }) {
   const [tab, setTab] = useState<Tab>(initialTab);
   const [units, setUnits] = useState<string[]>([]);
+  const [country, setCountry] = useState("");
+  const [nigeriaState, setNigeriaState] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
 
@@ -17,9 +19,10 @@ export default function InvolvedForms({ initialTab = "volunteer", eventLabel }: 
     setError(""); setState("sending");
     const f = new FormData(e.currentTarget);
     const g = (k: string) => String(f.get(k) ?? "");
+    const location = country === "Nigeria" ? `Nigeria, ${nigeriaState}` : country;
     const payload = tab === "volunteer"
-      ? { type: "VOLUNTEER", name: g("name"), email: g("email"), phone: g("phone"), units, location: g("location"), availability: g("availability"), message: g("message"), website: g("website") }
-      : { type: "OUTREACH_REQUEST", name: g("name"), email: g("email"), phone: g("phone"), organisation: g("organisation"), location: g("location"), girlsCount: g("girlsCount") || undefined, message: g("message"), website: g("website") };
+      ? { type: "VOLUNTEER", name: g("name"), email: g("email"), phone: g("phone"), units, location, availability: g("availability"), message: g("message"), website: g("website") }
+      : { type: "OUTREACH_REQUEST", name: g("name"), email: g("email"), phone: g("phone"), organisation: g("organisation"), location, girlsCount: g("girlsCount") || undefined, message: g("message"), website: g("website") };
     try {
       const res = await fetch("/api/signups", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       const j = await res.json().catch(() => ({}));
@@ -79,7 +82,7 @@ export default function InvolvedForms({ initialTab = "volunteer", eventLabel }: 
               </div>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
-              <div><label className="label" htmlFor="location">Primary location</label><select id="location" name="location" className="field">{LOCATIONS.map((l) => <option key={l}>{l}</option>)}</select></div>
+              <LocationFields country={country} setCountry={(value) => { setCountry(value); setNigeriaState(""); }} nigeriaState={nigeriaState} setNigeriaState={setNigeriaState} />
               <div><label className="label" htmlFor="availability">Availability{eventLabel ? ` (${eventLabel})` : ""}</label><select id="availability" name="availability" className="field">{AVAILABILITY.map((l) => <option key={l}>{l}</option>)}</select></div>
             </div>
           </>
@@ -87,7 +90,7 @@ export default function InvolvedForms({ initialTab = "volunteer", eventLabel }: 
           <>
             <div><label className="label" htmlFor="organisation">School / community name *</label><input id="organisation" name="organisation" required minLength={2} className="field" placeholder="e.g. Government Girls Secondary School" /></div>
             <div className="grid gap-4 md:grid-cols-2">
-              <div><label className="label" htmlFor="location">Town / LGA / State *</label><input id="location" name="location" required minLength={2} className="field" placeholder="e.g. Maiduguri, Borno" /></div>
+              <LocationFields country={country} setCountry={(value) => { setCountry(value); setNigeriaState(""); }} nigeriaState={nigeriaState} setNigeriaState={setNigeriaState} required />
               <div><label className="label" htmlFor="girlsCount">Approx. number of girls</label><input id="girlsCount" name="girlsCount" type="number" min={1} className="field" placeholder="e.g. 150" /></div>
             </div>
           </>
@@ -102,4 +105,11 @@ export default function InvolvedForms({ initialTab = "volunteer", eventLabel }: 
       </form>
     </div>
   );
+}
+
+function LocationFields({ country, setCountry, nigeriaState, setNigeriaState, required = false }: { country: string; setCountry: (value: string) => void; nigeriaState: string; setNigeriaState: (value: string) => void; required?: boolean }) {
+  return <>
+    <div><label className="label" htmlFor="country">Country *</label><select id="country" value={country} onChange={(e) => setCountry(e.target.value)} required className="field"><option value="">Select an African country</option>{AFRICAN_COUNTRIES.map((item) => <option key={item} value={item}>{item}</option>)}</select></div>
+    {country === "Nigeria" && <div><label className="label" htmlFor="nigeriaState">State *</label><select id="nigeriaState" value={nigeriaState} onChange={(e) => setNigeriaState(e.target.value)} required className="field"><option value="">Select a state</option>{NIGERIAN_STATES.map((item) => <option key={item} value={item}>{item}</option>)}</select></div>}
+  </>;
 }
