@@ -7,12 +7,12 @@ import { Icon, Progress, StatusChip } from "./ui";
 export default function EditionCard({ e, compact = false }: { e: Edition; compact?: boolean }) {
   const showProgress = e.enrolled != null && e.targetReach;
   const pct = showProgress ? Math.round((e.enrolled! / e.targetReach!) * 100) : 0;
-  const coverImage = e.slug === "3-0" ? "/images/pag-3-0-shirt.jpg" : e.coverImage;
+  const coverImage = e.coverImage;
   return (
     <Link href={`/editions/${e.slug}`} className="card group flex h-full flex-col overflow-hidden transition hover:shadow-glow">
       {coverImage ? (
         <div className="relative h-44 w-full shrink-0 overflow-hidden bg-surface-container">
-          <Image src={coverImage} alt={e.slug === "3-0" ? "Pad A Girl 3.0 campaign shirt" : `${e.title} cover`} fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover transition duration-500 group-hover:scale-105" />
+          <Image src={coverImage} alt={`${e.title} campaign flyer`} fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain p-2 transition duration-500 group-hover:scale-[1.02]" />
         </div>
       ) : (
         <div className={`relative flex h-44 w-full shrink-0 items-end overflow-hidden px-5 pb-4 ${e.status === "UPCOMING" || e.status === "ONGOING" ? "bg-primary text-white" : "bg-primary-fixed text-primary"}`}>

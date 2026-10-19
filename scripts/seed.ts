@@ -39,6 +39,7 @@ async function main() {
       locations: ["Government Technical Secondary School, Njimtilo"], schools: 1, attendance: 250, reach: 200,
       summary: "The 28 October 2025 outreach at Government Technical Secondary School, Njimtilo recorded 250 attendees, including 200 students and 30 mothers. Ten volunteers supported pad distribution and menstrual hygiene education.",
       reportUrl: "/brand/PAG%201.0%20AND%202.0%20REPORT.pdf", reportLabel: "PAG 1.0 & 2.0 official field report",
+      coverImage: "/images/PAG%201.0%20FLIERS.jpeg",
     },
     {
       programId: program.id, label: "2.0", slug: "2-0", title: "Pad A Girl 2.0", status: "COMPLETED",
@@ -60,7 +61,7 @@ async function main() {
         { title: "Sensitise on menstrual health", body: "Education sessions at public secondary schools and IDP camps." },
         { title: "Keep girls in school", body: "Support so no girl misses school because she cannot afford pads." },
       ],
-      coverImage: "/images/pad-a-girl-banner.jpg",
+      coverImage: "/images/pag-3-0-flier.jpg",
     },
     {
       programId: program.id, label: "4.0", slug: "4-0", title: "Pad A Girl 4.0", status: "UPCOMING",

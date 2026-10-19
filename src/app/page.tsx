@@ -207,8 +207,8 @@ function UpcomingCampaign({ edition }: { edition: NonNullable<Awaited<ReturnType
 function CampaignFeature({ campaign }: { campaign: NonNullable<Awaited<ReturnType<typeof getEditionBySlug>>> }) {
   return (
     <section aria-labelledby="campaign-feature-title" className="grid overflow-hidden rounded-3xl border border-[#F3D9E2] bg-white shadow-warm md:grid-cols-[0.9fr_1.1fr]">
-      <div className="relative min-h-[20rem] bg-surface-container sm:min-h-[25rem]">
-        <Image src="/images/pag-3-0-shirt.jpg" alt="Pad A Girl 3.0 campaign shirt" fill sizes="(max-width: 768px) 100vw, 42vw" className="object-cover" />
+      <div className="relative min-h-[20rem] bg-white sm:min-h-[25rem]">
+        <Image src="/images/pag-3-0-flier.jpg" alt="Pad A Girl 3.0 Children's Day Dignity Drive flyer" fill sizes="(max-width: 768px) 100vw, 42vw" className="object-contain p-2" />
         <div className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 font-label-sm text-label-sm uppercase text-primary shadow backdrop-blur-sm">Children’s Day Dignity Drive</div>
       </div>
       <div className="flex flex-col items-start justify-center p-6 sm:p-9 lg:p-12">
