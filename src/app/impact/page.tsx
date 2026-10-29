@@ -67,15 +67,23 @@ export default async function ImpactPage() {
       </section>
 
       <section className="flex flex-col gap-3">
-        <SectionHeading title="PAG 1.0 and 2.0 report highlights" aside="From the official field report" />
+        <SectionHeading title="Edition reach and attendance" aside="Field figures supplied by J4AI" />
         <div className="grid gap-3 md:grid-cols-2">
           <article className="card p-5">
             <h2 className="font-headline-sm text-headline-sm">Pad A Girl 1.0 - Njimtilo</h2>
-            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 28 October 2025 outreach at Government Technical Secondary School recorded 250 attendees, including 200 students and 30 mothers. The report documents 10 volunteers and distribution of menstrual pads alongside hygiene education.</p>
+            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 28 October 2025 outreach at Government Technical Secondary School recorded 250 people: 200 students, 30 mothers, 10 volunteers, and 10 staff. Menstrual pads and hygiene education were provided.</p>
           </article>
           <article className="card p-5">
             <h2 className="font-headline-sm text-headline-sm">Pad A Girl 2.0 - Three institutions</h2>
-            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">Held January 22 to 26, 2026 at Government Girls Secondary School, Yerwa; Continuing Education Institute / Agency for Mass Literacy; and Federal Government Girls College, Monguno. The report records 440 attendees, including 410 students and 14 volunteers, and its objectives cite 265 female students and 130 young mothers.</p>
+            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">Held January 22 to 26, 2026 across Government Girls Secondary School, Yerwa; Continuing Education Institute / Agency for Mass Literacy; and Federal Government Girls College, Monguno. The 440 people included 410 students, 14 volunteers, and 16 staff across the three schools.</p>
+          </article>
+          <article className="card p-5">
+            <h2 className="font-headline-sm text-headline-sm">Pad A Girl 3.0 - Maiduguri</h2>
+            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 25–31 May 2026 drive recorded 325 people: 260 girls, 50 mothers, 10 volunteers, and 5 staff. The official report is being finalised.</p>
+          </article>
+          <article className="card p-5">
+            <h2 className="font-headline-sm text-headline-sm">Pad A Girl 4.0</h2>
+            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 23–24 October 2026 outreach recorded 264 people: 150 girls, 100 boys, 5 male staff, and 9 volunteers. The official report is pending.</p>
           </article>
         </div>
         <a href="/brand/PAG%201.0%20AND%202.0%20REPORT.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary self-start"><Icon name="picture_as_pdf" className="text-[18px]" />Download the PAG 1.0 and 2.0 field report</a>
