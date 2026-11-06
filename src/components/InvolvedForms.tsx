@@ -13,6 +13,7 @@ export default function InvolvedForms({ initialTab = "volunteer", eventLabel }: 
   const [nigeriaState, setNigeriaState] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
+  const [whatsappUrl, setWhatsappUrl] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -27,6 +28,7 @@ export default function InvolvedForms({ initialTab = "volunteer", eventLabel }: 
       const res = await fetch("/api/signups", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       const j = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(j.error ?? "Something went wrong");
+      setWhatsappUrl(j.whatsappUrl ?? "");
       setState("done");
     } catch (err) { setError((err as Error).message); setState("idle"); }
   }
@@ -37,8 +39,9 @@ export default function InvolvedForms({ initialTab = "volunteer", eventLabel }: 
         <Icon name="check_circle" fill className="text-[48px] text-primary" />
         <h3 className="font-headline-md text-headline-md">Thank you!</h3>
         <p className="max-w-sm font-body-md text-body-md text-on-surface-variant">
-          {tab === "volunteer" ? "Your volunteer application has been received. We'll reach out on WhatsApp or email shortly." : "Your outreach request has been received. Our team will contact you to discuss next steps."}
+          {tab === "volunteer" ? "Your volunteer application has been saved. Send its details to the J4AI team on WhatsApp to notify them." : "Your outreach request has been received. Our team will contact you to discuss next steps."}
         </p>
+        {tab === "volunteer" && whatsappUrl && <a className="btn-primary mt-2" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Icon name="chat" className="text-[18px]" />Send application on WhatsApp</a>}
         <button className="btn-outline mt-2" onClick={() => { setState("idle"); setUnits([]); }}>Submit another</button>
       </div>
     );

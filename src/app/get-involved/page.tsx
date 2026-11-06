@@ -4,7 +4,6 @@ import { getNextEdition } from "@/lib/queries";
 import { formatDateRange } from "@/lib/utils";
 import { getSettings } from "@/lib/settings";
 import InvolvedForms from "@/components/InvolvedForms";
-import BankCard from "@/components/BankCard";
 import { HeroGradient, Icon } from "@/components/ui";
 
 export const dynamic = "force-dynamic";
@@ -54,8 +53,8 @@ export default async function GetInvolved({ searchParams }: { searchParams: { ta
               <figure><div className="relative aspect-[4/5] overflow-hidden rounded-xl"><Image src="/images/merch/pad-a-girl-3-0-shirt-brown.jpg" alt="Brown Pad A Girl 3.0 campaign shirt" fill sizes="(max-width: 768px) 50vw, 200px" className="object-cover" /></div><figcaption className="mt-1 font-label-sm text-label-sm">Brown</figcaption></figure>
               <figure><div className="relative aspect-[4/5] overflow-hidden rounded-xl"><Image src="/images/merch/pad-a-girl-3-0-shirt-green.jpg" alt="Green Pad A Girl 3.0 campaign shirt" fill sizes="(max-width: 768px) 50vw, 200px" className="object-cover" /></div><figcaption className="mt-1 font-label-sm text-label-sm">Green</figcaption></figure>
             </div>
-            <p className="mt-3 font-body-sm text-body-sm text-on-surface-variant">For shirt or kit payments, use the official account below. Please include “Merch” in your transfer note.</p>
-            <div className="mt-3"><BankCard /></div>
+            <p className="mt-3 font-body-sm text-body-sm text-on-surface-variant">Message us on WhatsApp to check sizes, prices, delivery, and payment details for Pad A Girl shirts and kits.</p>
+            <a href={`https://wa.me/${s.store_whatsapp_number.replace(/\D/g, "")}?text=${encodeURIComponent("Hi, I would like to order Pad A Girl merchandise. Please share available sizes, prices, and delivery details.")}`} target="_blank" rel="noopener noreferrer" className="btn-primary mt-3"><Icon name="chat" className="text-[18px]" />Order via WhatsApp</a>
           </section>
           <div className="card p-4 font-body-sm text-body-sm text-on-surface-variant">
             <p className="font-label-lg text-label-lg text-on-surface">Questions?</p>

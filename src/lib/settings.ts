@@ -13,6 +13,8 @@ export const SETTING_DEFAULTS = {
   additional_contact_email: "subomijesusforallinitiative@gmail.com",
   contact_phone: "07066028592",
   press_email: "jesusforallinitiative@gmail.com",
+  store_whatsapp_number: "2349032142878",
+  volunteer_whatsapp_number: "2348125930003",
   instagram_handle: "j4ai_africa",
   girls_reached: "1000",
   mothers_reached: "160",

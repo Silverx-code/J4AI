@@ -4,6 +4,7 @@ import { db, schema } from "@/db";
 import { getSession } from "@/lib/auth";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
 import { notifyAdmin, sendEmail, esc } from "@/lib/email";
+import { getSettings } from "@/lib/settings";
 
 const base = {
   name: z.string().trim().min(2).max(120),
@@ -44,6 +45,23 @@ export async function POST(req: Request) {
     message: d.message || null,
   });
 
+  let whatsappUrl: string | undefined;
+  if (d.type === "VOLUNTEER") {
+    const settings = await getSettings();
+    const number = settings.volunteer_whatsapp_number.replace(/\D/g, "");
+    const details = [
+      "New J4AI volunteer application",
+      `Name: ${d.name}`,
+      `Phone: ${d.phone}`,
+      `Email: ${d.email}`,
+      `Location: ${d.location || "Not provided"}`,
+      `Availability: ${d.availability || "Not provided"}`,
+      `Preferred unit(s): ${d.units.join(", ")}`,
+      d.message ? `Message: ${d.message}` : "",
+    ].filter(Boolean).join("\n");
+    whatsappUrl = `https://wa.me/${number}?text=${encodeURIComponent(details)}`;
+  }
+
   void notifyAdmin(`New ${d.type === "VOLUNTEER" ? "volunteer application" : "outreach request"}: ${d.name}`, {
     Name: d.name, Email: d.email, Phone: d.phone, Location: d.location,
     Units: d.type === "VOLUNTEER" ? d.units.join(", ") : undefined,
@@ -53,5 +71,5 @@ export async function POST(req: Request) {
     to: d.email, subject: "We received your submission · Jesus For All Initiative",
     html: `<p>Hi ${esc(d.name)},</p><p>Thank you for ${d.type === "VOLUNTEER" ? "applying to volunteer with" : "requesting an outreach from"} the Jesus For All Initiative. Our team will review it and get back to you.</p><p>Every girl deserves dignity, education and comfort.</p>`,
   });
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, whatsappUrl });
 }
