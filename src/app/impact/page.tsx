@@ -82,8 +82,8 @@ export default async function ImpactPage() {
             <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 25–31 May 2026 drive recorded 325 people: 260 girls, 50 mothers, 10 volunteers, and 5 staff. The official report is being finalised.</p>
           </article>
           <article className="card p-5">
-            <h2 className="font-headline-sm text-headline-sm">Pad A Girl 4.0</h2>
-            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 23–24 October 2026 outreach recorded 264 people: 150 girls, 100 boys, 5 male staff, and 9 volunteers. The official report is pending.</p>
+            <h2 className="font-headline-sm text-headline-sm">PAG 4.0 - Government Secondary School, Maiduguri</h2>
+            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The October 23, 2026 outreach recorded 264 people: 150 girls, 100 boys, 5 male teachers, and 9 volunteers. The official report is pending.</p>
           </article>
         </div>
         <a href="/brand/PAG%201.0%20AND%202.0%20REPORT.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary self-start"><Icon name="picture_as_pdf" className="text-[18px]" />Download the PAG 1.0 and 2.0 field report</a>

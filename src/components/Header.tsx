@@ -15,9 +15,9 @@ export default async function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between border-b border-white/15 px-4">
         <Link href="/" className="flex items-center gap-2" aria-label="J4AI home">
           <Image src="/brand/j4ai-emblem.png" alt="J4AI logo" width={32} height={36} className="h-8 w-auto rounded-sm" priority />
-          <div className="flex flex-col leading-none">
-            <span className="font-label-sm text-[9px] leading-tight text-primary-fixed">An initiative of Fruitful Vine Foundation</span>
-            <span className="font-headline-sm text-[17px] font-bold text-white">Pad A Girl</span>
+          <div className="flex flex-col leading-tight">
+            <span className="font-headline-sm text-[14px] font-bold text-white sm:text-[16px]">Jesus For All Initiative</span>
+            <span className="font-label-sm text-[8px] leading-tight text-primary-fixed sm:text-[9px]">An initiative of Fruitfulvine Foundation</span>
           </div>
         </Link>
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
