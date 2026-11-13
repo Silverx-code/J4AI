@@ -41,7 +41,7 @@ export default async function NewsPage() {
 
       <section className="rounded-3xl bg-surface-container p-5 text-center">
         <p className="font-label-sm text-label-sm uppercase text-on-surface-variant">Media &amp; press inquiries</p>
-        <p className="font-body-md text-body-md">{s.press_email} · {s.contact_phone}</p>
+        <p className="font-body-md text-body-md">{s.press_email} · {s.contact_phone} · {s.additional_contact_phone}</p>
       </section>
     </main>
   );
