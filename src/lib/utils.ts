@@ -39,7 +39,7 @@ export const STATUS_LABEL: Record<string, string> = {
   UPCOMING: "Upcoming",
   ONGOING: "Ongoing",
   COMPLETED_REPORT_PENDING: "Completed · Report pending",
-  COMPLETED: "Completed",
+  COMPLETED: "Successful",
 };
 
 export function isDone(status: string) {

@@ -70,8 +70,8 @@ export default async function ImpactPage() {
         <SectionHeading title="Edition reach and attendance" aside="Field figures supplied by J4AI" />
         <div className="grid gap-3 md:grid-cols-2">
           <article className="card p-5">
-            <h2 className="font-headline-sm text-headline-sm">Pad A Girl 1.0 - Njimtilo</h2>
-            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 28 October 2025 outreach at Government Technical Secondary School recorded 250 people: 200 students, 30 mothers, 10 volunteers, and 10 staff. Menstrual pads and hygiene education were provided.</p>
+            <h2 className="font-headline-sm text-headline-sm">PAG 1.0 - Government Technical College, Njimtilo</h2>
+            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 28 October 2025 outreach recorded 250 people: 200 girls, 30 mothers, 10 staff, and 10 volunteers. Menstrual pads and hygiene education were provided.</p>
           </article>
           <article className="card p-5">
             <h2 className="font-headline-sm text-headline-sm">Pad A Girl 2.0 - Three institutions</h2>
@@ -79,7 +79,7 @@ export default async function ImpactPage() {
           </article>
           <article className="card p-5">
             <h2 className="font-headline-sm text-headline-sm">Pad A Girl 3.0 - Maiduguri</h2>
-            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 25–31 May 2026 drive recorded 325 people: 260 girls, 50 mothers, 10 volunteers, and 5 staff. The official report is being finalised.</p>
+            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The 25–31 May 2026 drive recorded 325 people: 260 young girls, 50 mothers, 10 volunteers, and 5 staff members. The official report is being finalised.</p>
           </article>
           <article className="card p-5">
             <h2 className="font-headline-sm text-headline-sm">PAG 4.0 - Government Secondary School, Maiduguri</h2>

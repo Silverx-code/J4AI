@@ -36,8 +36,8 @@ async function main() {
     {
       programId: program.id, label: "1.0", slug: "1-0", title: "Pad A Girl 1.0", status: "COMPLETED",
       tagline: "Where it began", startDate: "2025-10-28", endDate: "2025-10-28", hostState: "Borno State",
-      locations: ["Government Technical Secondary School, Njimtilo"], schools: 1, attendance: 250, reach: 200,
-      summary: "The 28 October 2025 outreach at Government Technical Secondary School, Njimtilo recorded 250 people: 200 students, 30 mothers, 10 volunteers, and 10 staff. The team distributed menstrual pads and provided hygiene education.",
+      locations: ["Government Technical College, Njimtilo"], schools: 1, attendance: 250, reach: 200,
+      summary: "The 28 October 2025 outreach at Government Technical College, Njimtilo recorded 250 people: 200 girls, 30 mothers, 10 staff, and 10 volunteers. The team distributed menstrual pads and provided hygiene education.",
       reportUrl: "/brand/PAG%201.0%20AND%202.0%20REPORT.pdf", reportLabel: "PAG 1.0 & 2.0 official field report",
       coverImage: "/images/PAG%201.0%20FLIERS.jpeg",
     },
@@ -55,7 +55,7 @@ async function main() {
       targetDescription: "Campaign goal: reach 395 girls through public secondary schools and IDP camps in Borno State.",
       partners: ["UNFPA"], partnerNote: "Organised by Jesus For All Initiative in collaboration with the United Nations Population Fund.",
       pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops"],
-      summary: "The 25–31 May 2026 drive in Maiduguri recorded 325 people: 260 girls, 50 mothers, 10 volunteers, and 5 staff. It provided pads and hygiene kits, menstrual health sensitisation, and support to keep girls in school.",
+      summary: "The 25–31 May 2026 drive in Maiduguri recorded 325 people: 260 young girls, 50 mothers, 10 volunteers, and 5 staff members. It provided pads and hygiene kits, menstrual health sensitisation, and support to keep girls in school.",
       objectives: [
         { title: "Donate pads and hygiene kits", body: "Direct distribution of sanitary pads and hygiene kits to girls." },
         { title: "Sensitise on menstrual health", body: "Education sessions at public secondary schools and IDP camps." },
@@ -64,10 +64,10 @@ async function main() {
       coverImage: "/images/pag-3-0-flier.jpg",
     },
     {
-      programId: program.id, label: "4.0", slug: "4-0", title: "Pad A Girl 4.0", status: "COMPLETED_REPORT_PENDING",
-      tagline: "Breaking Period Stigma & Promoting Dignity", startDate: "2026-10-23", endDate: "2026-10-24",
-      targetReach: 500, attendance: 264, reach: 150, locations: [], pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops", "Boys' Education"],
-      summary: "The 23–24 October 2026 outreach recorded 264 people: 150 girls, 100 boys, 5 male staff, and 9 volunteers. The field report is pending.",
+      programId: program.id, label: "4.0", slug: "4-0", title: "Pad A Girl 4.0", status: "COMPLETED",
+      tagline: "Breaking Period Stigma & Promoting Dignity", startDate: "2026-10-23", endDate: "2026-10-23", hostState: "Borno State",
+      targetReach: 500, attendance: 264, reach: 150, schools: 1, locations: ["Government Secondary School, Maiduguri"], pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops", "Boys' Education"],
+      summary: "The October 23, 2026 outreach at Government Secondary School, Maiduguri recorded 264 people: 150 girls, 100 boys, 5 male teachers, and 9 volunteers. The official report is pending.",
     },
   ];
   for (const e of editions) await db.insert(s.editions).values(e).onConflictDoNothing();
@@ -83,8 +83,8 @@ async function main() {
 
   const posts: (typeof s.posts.$inferInsert)[] = [
     { title: "Pad A Girl 4.0: Outreach figures", slug: "pad-a-girl-4-0-announced", category: "Impact Report", featured: true, status: "PUBLISHED",
-      excerpt: "The 23–24 October 2026 outreach recorded 264 people, including 150 girls, 100 boys, 5 male staff, and 9 volunteers. The official report is pending.",
-      body: "Pad A Girl 4.0 took place on 23–24 October 2026. The outreach recorded 264 people: 150 girls, 100 boys, 5 male staff, and 9 volunteers.\n\nThe official field report is pending. See the Impact page for figures from all four editions.",
+      excerpt: "The October 23, 2026 outreach at Government Secondary School, Maiduguri recorded 264 people, including 150 girls, 100 boys, 5 male teachers, and 9 volunteers.",
+      body: "Pad A Girl 4.0 took place on October 23, 2026 at Government Secondary School, Maiduguri. The outreach recorded 264 people: 150 girls, 100 boys, 5 male teachers, and 9 volunteers.\n\nThe official field report is pending. See the Impact page for figures from all four editions.",
       ctaLabel: "Get involved", ctaUrl: "/get-involved", publishedAt: new Date("2026-10-01T09:00:00Z") },
     { title: "Pad A Girl 3.0: Children's Day Dignity Drive", slug: "pad-a-girl-3-0-childrens-day", category: "Impact Report", status: "PUBLISHED",
       excerpt: "The 3.0 drive ran 25–31 May 2026 in Maiduguri. The full verified report is being finalised.",

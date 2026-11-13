@@ -36,6 +36,20 @@
       "when": 1792627200000,
       "tag": "0004_use_edition_flyers",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794528000000,
+      "tag": "0006_mark_pad_a_girl_4_successful",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1794614400000,
+      "tag": "0007_update_pag_1_and_3_figures",
+      "breakpoints": true
     }
   ]
 }
