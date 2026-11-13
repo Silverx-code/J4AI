@@ -85,14 +85,14 @@ async function main() {
     { title: "Pad A Girl 4.0: Outreach figures", slug: "pad-a-girl-4-0-announced", category: "Impact Report", featured: true, status: "PUBLISHED",
       excerpt: "The October 23, 2026 outreach at Government Secondary School, Maiduguri recorded 264 people, including 150 girls, 100 boys, 5 male teachers, and 9 volunteers.",
       body: "Pad A Girl 4.0 took place on October 23, 2026 at Government Secondary School, Maiduguri. The outreach recorded 264 people: 150 girls, 100 boys, 5 male teachers, and 9 volunteers.\n\nThe official field report is pending. See the Impact page for figures from all four editions.",
-      ctaLabel: "Get involved", ctaUrl: "/get-involved", publishedAt: new Date("2026-10-01T09:00:00Z") },
+      ctaLabel: "Get involved", ctaUrl: "/get-involved", publishedAt: new Date("2026-10-28T09:00:00Z") },
     { title: "Pad A Girl 3.0: Children's Day Dignity Drive", slug: "pad-a-girl-3-0-childrens-day", category: "Impact Report", status: "PUBLISHED",
       excerpt: "The 3.0 drive ran 25–31 May 2026 in Maiduguri. The full verified report is being finalised.",
       body: "Pad A Girl 3.0 was a Children's Day dignity drive for girls in Borno State, held 25–31 May 2026 in collaboration with UNFPA.\n\nOur team is reconciling field records and finances. Certified figures and the full report will be published on the Impact page as soon as they are ready.",
       ctaLabel: "See the edition", ctaUrl: "/editions/3-0", publishedAt: new Date("2026-06-15T09:00:00Z") },
-    { title: "Volunteer call for Pad A Girl 4.0", slug: "volunteer-call-pad-a-girl-4-0", category: "Volunteer Call", status: "PUBLISHED",
+    { title: "Volunteer call for Pad A Girl 5.0", slug: "volunteer-call-pad-a-girl-5-0", category: "Volunteer Call", status: "PUBLISHED",
       excerpt: "We need volunteers in organisation and registration, publicity, logistics, technical, welfare and MC units.",
-      body: "We are welcoming passionate young people and health advocates to join the Pad A Girl 4.0 team.\n\nUnits: Organization & Registration, Publicity & Media, Logistics & Transport, Technical & Sound, Welfare & Care, and Master of Ceremonies.\n\nApply on the Get Involved page.",
+      body: "We are welcoming passionate young people and health advocates to join the Pad A Girl 5.0 team.\n\nUnits: Organization & Registration, Publicity & Media, Logistics & Transport, Technical & Sound, Welfare & Care, and Master of Ceremonies.\n\nApply on the Get Involved page.",
       ctaLabel: "Apply as a volunteer", ctaUrl: "/get-involved", publishedAt: new Date("2026-10-02T09:00:00Z") },
   ];
   for (const p of posts) await db.insert(s.posts).values(p).onConflictDoNothing();

@@ -58,7 +58,7 @@ export default async function GetInvolved({ searchParams }: { searchParams: { ta
           </section>
           <div className="card p-4 font-body-sm text-body-sm text-on-surface-variant">
             <p className="font-label-lg text-label-lg text-on-surface">Questions?</p>
-            <p>{s.contact_email}</p><p>{s.additional_contact_email}</p><p>{s.contact_phone}</p><p>Instagram @{s.instagram_handle}</p>
+            <p>{s.contact_email}</p><p>{s.additional_contact_email}</p><p>{s.contact_phone}</p><p>{s.additional_contact_phone}</p><p>Instagram: @{s.instagram_handle}</p><p>LinkedIn: @{s.instagram_handle}</p>
           </div>
         </aside>
       </div>

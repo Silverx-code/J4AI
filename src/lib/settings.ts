@@ -12,6 +12,7 @@ export const SETTING_DEFAULTS = {
   contact_email: "jesusforallinitiative@gmail.com",
   additional_contact_email: "subomijesusforallinitiative@gmail.com",
   contact_phone: "07066028592",
+  additional_contact_phone: "07075288090",
   press_email: "jesusforallinitiative@gmail.com",
   store_whatsapp_number: "2349032142878",
   volunteer_whatsapp_number: "2348125930003",

@@ -7,7 +7,7 @@ const FIELDS: [SettingKey, string, string?][] = [
   ["account_name", "Account name"], ["beneficiary_label", "Beneficiary label shown to donors"],
   ["additional_contact_email", "Additional contact email"], ["girls_reached", "Cumulative girls reached"], ["mothers_reached", "Cumulative mothers reached"],
   ["cost_per_girl", "Cost to supply one girl (₦)", "Drives sponsorship tiers and campaign progress."],
-  ["contact_email", "Contact email"], ["contact_phone", "Contact phone"], ["press_email", "Press email"],
+  ["contact_email", "Contact email"], ["contact_phone", "Contact phone"], ["additional_contact_phone", "Additional contact phone"], ["press_email", "Press email"],
   ["store_whatsapp_number", "Store WhatsApp number", "International format, digits only (for example 2348012345678)."],
   ["volunteer_whatsapp_number", "Volunteer notification WhatsApp number", "International format, digits only (for example 2348012345678)."],
   ["instagram_handle", "Instagram handle (no @)"],

@@ -19,7 +19,9 @@ export default async function Footer() {
           <p>{s.contact_email}</p>
           <p>{s.additional_contact_email}</p>
           <p>{s.contact_phone}</p>
-          <p>@{s.instagram_handle}</p>
+          <p>{s.additional_contact_phone}</p>
+          <p>Instagram: @{s.instagram_handle}</p>
+          <p>LinkedIn: @{s.instagram_handle}</p>
         </div>
       </div>
       <p className="mx-auto mt-6 max-w-6xl px-4 font-label-sm text-[10px] uppercase text-outline">© {new Date().getFullYear()} Jesus For All Initiative</p>

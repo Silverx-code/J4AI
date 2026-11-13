@@ -14,9 +14,11 @@ export default async function ContactPage() {
         <h1 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">Contact us</h1>
         <p className="mt-1 font-body-md text-body-md text-on-surface-variant">Questions, partnerships or press? We&apos;d love to hear from you.</p>
         <div className="mt-5 flex flex-col gap-3">
-          {[["mail", s.contact_email, `mailto:${s.contact_email}`], ["mail", s.additional_contact_email, `mailto:${s.additional_contact_email}`], ["call", s.contact_phone, `tel:${s.contact_phone}`], ["photo_camera", `@${s.instagram_handle}`, `https://instagram.com/${s.instagram_handle}`]].map(([icon, t, href]) => (
+          {[["mail", s.contact_email, `mailto:${s.contact_email}`], ["mail", s.additional_contact_email, `mailto:${s.additional_contact_email}`], ["call", s.contact_phone, `tel:${s.contact_phone}`], ["photo_camera", `Instagram: @${s.instagram_handle}`, `https://instagram.com/${s.instagram_handle}`]].map(([icon, t, href]) => (
             <a key={t} href={href} className="card flex items-center gap-3 p-4 transition hover:shadow-glow"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-fixed text-primary"><Icon name={icon} /></div><span className="font-label-lg text-label-lg">{t}</span></a>
           ))}
+          <a href={`tel:${s.additional_contact_phone}`} className="card flex items-center gap-3 p-4 transition hover:shadow-glow"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-fixed text-primary"><Icon name="call" /></div><span className="font-label-lg text-label-lg">{s.additional_contact_phone}</span></a>
+          <div className="card flex items-center gap-3 p-4"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-fixed text-primary"><Icon name="business" /></div><span className="font-label-lg text-label-lg">LinkedIn: @{s.instagram_handle}</span></div>
         </div>
       </div>
       <ContactForm />

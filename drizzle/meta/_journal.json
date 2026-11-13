@@ -64,6 +64,20 @@
       "when": 1794787200000,
       "tag": "0009_reconcile_participant_totals",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1794873600000,
+      "tag": "0010_add_contact_phone_and_pag_5_volunteer_call",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1794960000000,
+      "tag": "0011_move_oct_22_news_date_to_oct_28",
+      "breakpoints": true
     }
   ]
 }
