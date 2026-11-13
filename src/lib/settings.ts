@@ -16,8 +16,8 @@ export const SETTING_DEFAULTS = {
   store_whatsapp_number: "2349032142878",
   volunteer_whatsapp_number: "2348125930003",
   instagram_handle: "j4ai_africa",
-  girls_reached: "1150",
-  mothers_reached: "160",
+  girls_reached: "1020",
+  mothers_reached: "80",
 } as const;
 
 export type SettingKey = keyof typeof SETTING_DEFAULTS;

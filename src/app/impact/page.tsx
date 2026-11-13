@@ -18,6 +18,20 @@ export default async function ImpactPage() {
   const pendingFinance = editions.filter((e) => e.status === "COMPLETED_REPORT_PENDING");
   const reports = editions.filter((e) => e.reportUrl);
   const doneCount = editions.filter((e) => isDone(e.status)).length;
+  const participantRows = [
+    { campaign: "PAG 1.0", girlsStudents: 200, boys: 0, mothers: 30, staff: 10, volunteers: 10 },
+    { campaign: "PAG 2.0", girlsStudents: 410, boys: 0, mothers: 0, staff: 16, volunteers: 14 },
+    { campaign: "PAG 3.0", girlsStudents: 260, boys: 0, mothers: 50, staff: 5, volunteers: 10 },
+    { campaign: "PAG 4.0", girlsStudents: 150, boys: 100, mothers: 0, staff: 5, volunteers: 9 },
+  ].map((row) => ({ ...row, total: row.girlsStudents + row.boys + row.mothers + row.staff + row.volunteers }));
+  const participantTotals = participantRows.reduce((totals, row) => ({
+    girlsStudents: totals.girlsStudents + row.girlsStudents,
+    boys: totals.boys + row.boys,
+    mothers: totals.mothers + row.mothers,
+    staff: totals.staff + row.staff,
+    volunteers: totals.volunteers + row.volunteers,
+    total: totals.total + row.total,
+  }), { girlsStudents: 0, boys: 0, mothers: 0, staff: 0, volunteers: 0, total: 0 });
 
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-4">
@@ -29,21 +43,40 @@ export default async function ImpactPage() {
 
       <section className="rounded-3xl bg-gradient-to-br from-primary to-primary-container p-5 text-on-primary shadow-xl md:p-8">
         <p className="font-label-sm text-label-sm uppercase opacity-90">Mission milestone</p>
-        <p className="mt-1 font-display-hero-mobile text-[44px] font-extrabold leading-none md:text-[64px]">{stats.reach.toLocaleString()}+</p>
-        <p className="mt-1 font-label-lg text-label-lg">Girls reached across J4AI programmes</p>
+        <p className="mt-1 font-display-hero-mobile text-[44px] font-extrabold leading-none md:text-[64px]">{participantTotals.girlsStudents.toLocaleString()}</p>
+        <p className="mt-1 font-label-lg text-label-lg">Girls and students reached across J4AI programmes</p>
         <p className="mt-2 max-w-xl font-body-sm text-body-sm text-primary-fixed">Breaking menstrual stigma, distributing sanitary kits and championing dignifying education across underserved communities.</p>
       </section>
 
-      <section className="grid grid-cols-2 gap-3 md:grid-cols-5">
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-7">
         {[
-          ["favorite", "Verified girls reached", stats.reach.toLocaleString()],
-          ["family_restroom", "Mothers reached", stats.mothersReached.toLocaleString()],
+          ["favorite", "Girls / students", participantTotals.girlsStudents.toLocaleString()],
+          ["groups", "Boys", participantTotals.boys.toLocaleString()],
+          ["family_restroom", "Mothers reached", participantTotals.mothers.toLocaleString()],
+          ["groups", "Total participants", participantTotals.total.toLocaleString()],
           ["flag", "Editions held", String(doneCount)],
           ["school", "Schools reached", String(stats.schools)],
-          ["tv", "Press features", String(stats.pressFeatures)],
+          ["camping", "IDP camps reached", "1"],
         ].map(([icon, label, v]) => (
           <div key={label} className="card p-4"><Icon name={icon} className="text-primary" /><p className="mt-2 font-headline-md text-headline-md font-extrabold text-primary">{v}</p><p className="font-label-sm text-label-sm uppercase text-on-surface-variant">{label}</p></div>
         ))}
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <SectionHeading title="Total PAG Beneficiaries and Participants" aside="Figures across four campaigns" />
+        <div className="card overflow-x-auto p-4">
+          <table className="w-full min-w-[720px] text-left font-body-sm text-body-sm">
+            <thead><tr className="border-b border-outline-variant text-on-surface-variant">
+              {["Campaign", "Girls/Students", "Boys", "Mothers", "Teachers/Staff", "Volunteers", "Total"].map((heading) => <th key={heading} className="px-2 py-3 font-label-md text-label-md">{heading}</th>)}
+            </tr></thead>
+            <tbody>
+              {participantRows.map((row) => <tr key={row.campaign} className="border-b border-outline-variant/60">
+                <th className="px-2 py-3 font-semibold">{row.campaign}</th><td className="px-2 py-3">{row.girlsStudents}</td><td className="px-2 py-3">{row.boys}</td><td className="px-2 py-3">{row.mothers}</td><td className="px-2 py-3">{row.staff}</td><td className="px-2 py-3">{row.volunteers}</td><td className="px-2 py-3 font-semibold">{row.total}</td>
+              </tr>)}
+              <tr className="font-extrabold text-primary"><th className="px-2 py-3">GRAND TOTAL</th><td className="px-2 py-3">{participantTotals.girlsStudents.toLocaleString()}</td><td className="px-2 py-3">{participantTotals.boys.toLocaleString()}</td><td className="px-2 py-3">{participantTotals.mothers.toLocaleString()}</td><td className="px-2 py-3">{participantTotals.staff.toLocaleString()}</td><td className="px-2 py-3">{participantTotals.volunteers.toLocaleString()}</td><td className="px-2 py-3">{participantTotals.total.toLocaleString()}</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section className="flex flex-col gap-3">

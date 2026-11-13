@@ -44,15 +44,15 @@ async function main() {
     {
       programId: program.id, label: "2.0", slug: "2-0", title: "Pad A Girl 2.0", status: "COMPLETED",
       tagline: "Three schools, one mission", startDate: "2026-01-22", endDate: "2026-01-26", hostState: "Borno State",
-      locations: ["Government Girls Secondary School, Yerwa", "Continuing Education Institute / Agency for Mass Literacy", "Federal Government Girls College, Monguno"], schools: 3, attendance: 440, reach: 265, targetReach: 600,
+      locations: ["Government Girls Secondary School, Yerwa", "Continuing Education Institute / Agency for Mass Literacy", "Federal Government Girls College, Monguno"], schools: 3, attendance: 440, reach: 410, targetReach: 600,
       summary: "Held January 22 to 26, 2026 across three institutions: Government Girls Secondary School, Yerwa; Continuing Education Institute / Agency for Mass Literacy; and Federal Government Girls College, Monguno. The report records 440 people: 410 students, 14 volunteers, and 16 staff across the three schools.",
       reportUrl: "/brand/PAG%201.0%20AND%202.0%20REPORT.pdf", reportLabel: "PAG 1.0 & 2.0 official field report",
     },
     {
       programId: program.id, label: "3.0", slug: "3-0", title: "Pad A Girl 3.0", status: "COMPLETED_REPORT_PENDING",
       tagline: "Children's Day Dignity Drive", startDate: "2026-05-25", endDate: "2026-05-31", hostState: "Borno State",
-      locations: ["Maiduguri"], targetReach: 395, attendance: 325, reach: 260,
-      targetDescription: "Campaign goal: reach 395 girls through public secondary schools and IDP camps in Borno State.",
+      locations: ["Maiduguri"], targetReach: 325, attendance: 325, reach: 260,
+      targetDescription: "Campaign goal: reach 325 girls through public secondary schools and IDP camps in Borno State.",
       partners: ["UNFPA"], partnerNote: "Organised by Jesus For All Initiative in collaboration with the United Nations Population Fund.",
       pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops"],
       summary: "The 25–31 May 2026 drive in Maiduguri recorded 325 people: 260 young girls, 50 mothers, 10 volunteers, and 5 staff members. It provided pads and hygiene kits, menstrual health sensitisation, and support to keep girls in school.",
