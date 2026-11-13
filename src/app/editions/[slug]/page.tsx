@@ -49,7 +49,7 @@ export default async function EditionPage({ params }: { params: { slug: string }
         <SectionHeading title="Mission Quick Facts" aside={done ? "Verified registry" : "Planned"} />
         <div className="grid gap-3 md:grid-cols-3">
           {e.reach != null && (
-            <div className="card p-4"><p className="font-label-sm text-label-sm uppercase text-primary">Verified reach</p><p className="font-headline-md text-headline-md font-extrabold">{e.reach.toLocaleString()} girls</p>{e.attendance != null && <p className="font-body-sm text-body-sm text-on-surface-variant">{e.attendance.toLocaleString()} total attendees recorded.</p>}</div>
+            <div className="card p-4"><p className="font-label-sm text-label-sm uppercase text-primary">Verified beneficiary reach</p><p className="font-headline-md text-headline-md font-extrabold">{e.reach.toLocaleString()} beneficiaries</p>{e.attendance != null && <p className="font-body-sm text-body-sm text-on-surface-variant">Total attendance: {e.attendance.toLocaleString()}.</p>}</div>
           )}
           {e.targetReach != null && (
             <div className="card p-4"><div className="flex items-center justify-between"><p className="font-label-sm text-label-sm uppercase text-primary">Target reach</p><span className="chip">{done ? "Campaign goal" : "Planned target"}</span></div><p className="font-headline-md text-headline-md font-extrabold">{e.targetReach.toLocaleString()} girls</p>{e.targetDescription && <p className="font-body-sm text-body-sm text-on-surface-variant">{e.targetDescription}</p>}</div>

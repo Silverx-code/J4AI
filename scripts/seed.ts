@@ -66,8 +66,8 @@ async function main() {
     {
       programId: program.id, label: "4.0", slug: "4-0", title: "Pad A Girl 4.0", status: "COMPLETED",
       tagline: "Breaking Period Stigma & Promoting Dignity", startDate: "2026-10-23", endDate: "2026-10-23", hostState: "Borno State",
-      targetReach: 500, attendance: 264, reach: 150, schools: 1, locations: ["Government Secondary School, Maiduguri"], pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops", "Boys' Education"],
-      summary: "The October 23, 2026 outreach at Government Secondary School, Maiduguri recorded 264 people: 150 girls, 100 boys, 5 male teachers, and 9 volunteers. The official report is pending.",
+      targetReach: 500, attendance: 264, reach: 250, schools: 1, locations: ["Government Secondary School, Maiduguri"], pillars: ["Hygiene Kits", "Stigma Eradication", "Dignity Workshops", "Boys' Education"],
+      summary: "The October 23, 2026 outreach at Government Secondary School, Maiduguri reached 250 beneficiaries: 150 girls and 100 boys. Five male teachers and 9 volunteers also participated, bringing total attendance to 264. The official report is pending.",
     },
   ];
   for (const e of editions) await db.insert(s.editions).values(e).onConflictDoNothing();
@@ -83,8 +83,8 @@ async function main() {
 
   const posts: (typeof s.posts.$inferInsert)[] = [
     { title: "Pad A Girl 4.0: Outreach figures", slug: "pad-a-girl-4-0-announced", category: "Impact Report", featured: true, status: "PUBLISHED",
-      excerpt: "The October 23, 2026 outreach at Government Secondary School, Maiduguri recorded 264 people, including 150 girls, 100 boys, 5 male teachers, and 9 volunteers.",
-      body: "Pad A Girl 4.0 took place on October 23, 2026 at Government Secondary School, Maiduguri. The outreach recorded 264 people: 150 girls, 100 boys, 5 male teachers, and 9 volunteers.\n\nThe official field report is pending. See the Impact page for figures from all four editions.",
+      excerpt: "The October 23, 2026 outreach at Government Secondary School, Maiduguri reached 250 beneficiaries: 150 girls and 100 boys, with 264 people in total attendance.",
+      body: "Pad A Girl 4.0 took place on October 23, 2026 at Government Secondary School, Maiduguri. It reached 250 beneficiaries: 150 girls and 100 boys. Five male teachers and 9 volunteers also participated, bringing total attendance to 264.\n\nThe official field report is pending. See the Impact page for figures from all four editions.",
       ctaLabel: "Get involved", ctaUrl: "/get-involved", publishedAt: new Date("2026-10-28T09:00:00Z") },
     { title: "Pad A Girl 3.0: Children's Day Dignity Drive", slug: "pad-a-girl-3-0-childrens-day", category: "Impact Report", status: "PUBLISHED",
       excerpt: "The 3.0 drive ran 25–31 May 2026 in Maiduguri. The full verified report is being finalised.",

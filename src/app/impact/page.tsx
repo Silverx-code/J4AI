@@ -47,7 +47,7 @@ export default async function ImpactPage() {
         <p className="font-label-sm text-label-sm uppercase opacity-90">Mission milestone</p>
         <p className="mt-1 font-display-hero-mobile text-[44px] font-extrabold leading-none md:text-[64px]">{verifiedReach.toLocaleString()}</p>
         <p className="mt-1 font-label-lg text-label-lg">Verified beneficiaries reached: girls, students and boys</p>
-        <p className="mt-2 max-w-xl font-body-sm text-body-sm text-primary-fixed">This reach total includes 1,020 girls/students and 100 boys. Mothers, staff and volunteers are shown separately in the participant totals.</p>
+        <p className="mt-2 max-w-xl font-body-sm text-body-sm text-primary-fixed">Verified reach includes 1,020 girls/students and 100 boys. Mothers, teachers/staff and volunteers are included in total attendance, shown separately below.</p>
       </section>
 
       <section className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-4">
@@ -93,9 +93,9 @@ export default async function ImpactPage() {
               </div>
               <div className="grid grid-cols-2 gap-3 rounded-2xl bg-surface-container-low p-3 font-body-sm text-body-sm">
                 <div><p className="font-label-sm text-label-sm uppercase text-on-surface-variant">Dates &amp; hub</p><p className="font-semibold">{formatDateRange(e.startDate, e.endDate)}</p><p className="text-on-surface-variant">{e.hostState ?? e.locations[0] ?? "TBA"}</p></div>
-                <div><p className="font-label-sm text-label-sm uppercase text-on-surface-variant">{e.reach != null ? "Verified impact" : e.attendance != null ? "Recorded attendance" : "Campaign goal"}</p><p className="font-semibold text-primary">{e.reach != null ? `${e.reach.toLocaleString()} girls reached` : e.attendance != null ? `~${e.attendance.toLocaleString()} attendees` : e.targetReach ? `${e.targetReach.toLocaleString()} girls` : "—"}</p></div>
+                <div><p className="font-label-sm text-label-sm uppercase text-on-surface-variant">{e.reach != null ? "Verified beneficiary reach" : e.attendance != null ? "Recorded attendance" : "Campaign goal"}</p><p className="font-semibold text-primary">{e.reach != null ? `${e.reach.toLocaleString()} beneficiaries` : e.attendance != null ? `~${e.attendance.toLocaleString()} attendees` : e.targetReach ? `${e.targetReach.toLocaleString()} girls` : "—"}</p>{e.reach != null && e.attendance != null && <p className="text-on-surface-variant">Total attendance: {e.attendance.toLocaleString()}</p>}</div>
               </div>
-              {e.status === "COMPLETED_REPORT_PENDING" && <p className="flex items-center gap-1 font-body-sm text-body-sm text-secondary"><Icon name="hourglass_top" className="text-[16px]" />Reconciliation in progress</p>}
+              {e.status === "COMPLETED_REPORT_PENDING" && e.slug !== "3-0" && <p className="flex items-center gap-1 font-body-sm text-body-sm text-secondary"><Icon name="hourglass_top" className="text-[16px]" />Reconciliation in progress</p>}
               {e.reportUrl && <a href={e.reportUrl} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2"><Icon name="picture_as_pdf" className="text-[18px]" />{e.reportLabel ?? "View report"}</a>}
             </div>
           ))}
@@ -119,7 +119,7 @@ export default async function ImpactPage() {
           </article>
           <article className="card p-5">
             <h2 className="font-headline-sm text-headline-sm">PAG 4.0 - Government Secondary School, Maiduguri</h2>
-            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">The October 23, 2026 outreach recorded 264 people: 150 girls, 100 boys, 5 male teachers, and 9 volunteers. The official report is pending.</p>
+            <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">On October 23, 2026, PAG 4.0 reached 250 beneficiaries: 150 girls and 100 boys. Five male teachers and 9 volunteers also participated, bringing total attendance to 264. The official report is pending.</p>
           </article>
         </div>
         <a href="/brand/PAG%201.0%20AND%202.0%20REPORT.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary self-start"><Icon name="picture_as_pdf" className="text-[18px]" />Download the PAG 1.0 and 2.0 field report</a>
